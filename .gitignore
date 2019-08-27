@@ -1,0 +1,12 @@
+# Binaries
+bin/
+target/
+
+*.log
+
+# Checkstyle
+.checkstyle
+
+# IntelliJ
+.idea/
+*.iml

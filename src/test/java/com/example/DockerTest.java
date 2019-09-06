@@ -16,4 +16,12 @@ class DockerTest {
 		assertEquals("foo\n", foo.getLogs());
 	}
 
+	@Test
+	void testBar() {
+		GenericContainer foo = new GenericContainer("example/bar")
+				.waitingFor(Wait.forLogMessage(".*bar.*", 1));
+		foo.start();
+		assertEquals("bar\n", foo.getLogs());
+	}
+
 }

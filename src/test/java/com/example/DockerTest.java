@@ -5,6 +5,7 @@ import org.testcontainers.containers.GenericContainer;
 import org.testcontainers.containers.wait.strategy.Wait;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
 
 class DockerTest {
 
@@ -22,6 +23,11 @@ class DockerTest {
 				.waitingFor(Wait.forLogMessage(".*bar.*", 1));
 		foo.start();
 		assertEquals("bar\n", foo.getLogs());
+	}
+
+	@Test
+	void failingTest() {
+		fail();
 	}
 
 }
